@@ -12,7 +12,7 @@
   --spacing-big: 1rem; /* DEPRECATED name, use --spacing-large instead */
   --spacing-bigger: 2rem; /* DEPRECATED name, use --spacing-larger instead */
 
-  --color-highlight: #A4131D;
+  --color-highlight: #373738;
   --color-highlight-rgb: 164, 19, 29;
   --color-highlight-lighter: rgba(var(--color-highlight-rgb), 0.1);
   --color-secondary: #666;
