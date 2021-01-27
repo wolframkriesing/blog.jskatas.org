@@ -1,5 +1,9 @@
 @import "./_global.css";
 @import "./_nav.css";
 
+article {
+  margin-top: var(--spacing-larger);
+}
+
 @media screen and (max-width: 60rem) {
 }
