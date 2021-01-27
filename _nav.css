@@ -12,6 +12,8 @@ header.sitename, header.sitename * {
   }
   @media screen and (max-width: 60rem) {
     header.sitename {
+      margin-top: var(--spacing-larger);
+      margin-bottom: 0;
       flex: 1;
     }
   }

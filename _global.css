@@ -213,9 +213,9 @@ blockquote.twitter-tweet {
 
 .box-main-content,
 .box-sidebar {
-  box-shadow: 0px 0px 20px 5px var(--color-foreground-highlight-3rd);
-  padding: var(--spacing-larger);
-  margin: var(--spacing-larger);
+  box-shadow: none;
+  padding: var(--spacing-medium);
+  margin: var(--spacing-small);
   overflow: hidden;
 }
 .box-sidebar {
@@ -228,6 +228,7 @@ blockquote.twitter-tweet {
     .box-sidebar {
       box-shadow: 0px 0px 30px 8px var(--color-foreground-highlight-3rd);
       margin: var(--spacing-larger) var(--spacing-medium);
+      padding: var(--spacing-larger);
     }
   }
   @media screen and (min-width: 90rem) {
