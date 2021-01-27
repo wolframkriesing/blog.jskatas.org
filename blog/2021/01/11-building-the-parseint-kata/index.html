@@ -6,18 +6,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="author" content="Wolfram Kriesing">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="jskatas - Learn and re-learn JavaScript. At your speed and level.">
+  <meta name="description" content="JSKatas Blog - Continuously Learn JavaScript. Your Way.">
+
+  <link rel="preload" href="/_vars.css" as="style">
+  <link rel="preload" href="/_reset.css" as="style">
+  <link rel="preload" href="/_global.css" as="style">
+  <link rel="preload" href="/_nav.css" as="style">
 
     <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@wolframkriesing" />
+  <meta name="twitter:site" content="@jskatas" />
   <meta name="twitter:title" content="Building the `parseInt()` Katas" />
 
   <meta property="og:title" content="Building the `parseInt()` Katas">
   <meta property="og:type" content="website">
-<meta property="og:url" content="https://blog.jskatas.org/blog/2021/01/11-building-the-parseint-kata/">  <meta property="og:site_name" content="jskatas - Learn and re-learn JavaScript. At your speed and level.">
+<meta property="og:url" content="https://blog.jskatas.org/blog/2021/01/11-building-the-parseint-kata/">  <meta property="og:site_name" content="JSKatas Blog - Continuously Learn JavaScript. Your Way.">
 
   <script async defer data-domain="blog.jskatas.org" src="https://plausible.io/js/plausible.js"></script>
-<link rel="canonical" href="https://blog.jskatas.org/blog/2021/01/11-building-the-parseint-kata/">  <title>Building the `parseInt()` Katas | jskatas - Learn and re-learn JavaScript. At your speed and level.</title>
+<link rel="canonical" href="https://blog.jskatas.org/blog/2021/01/11-building-the-parseint-kata/">  <title>Building the `parseInt()` Katas | JSKatas Blog - Continuously Learn JavaScript. Your Way.</title>
 
   <script async defer type="module" src="https://more-html.github.io/components/src/Heading-loader.js"></script>
   <link rel="stylesheet" href="/blog/blog.css" type="text/css">
@@ -51,36 +56,29 @@ this is a pretty easy to read part of the spec." />
     <meta property="og:image:url"  content="https://blog.jskatas.org/blog/2021/01/11-building-the-parseint-kata/preview.jpg" />
     <meta name="twitter:image" content="https://blog.jskatas.org/blog/2021/01/11-building-the-parseint-kata/preview.jpg" />
 </head>
-<body class="page-post">
 
-    <header>
-    <nav class="primary">
-        <ul>
+<body class="page-post">
+    <header class="sitename">
+    <a href="/">JSKatas Blog</a>
+    <p class="subtitle">
+      Continuously Learn JavaScript. Your Way.
+    </p>
+  </header>
+
+  <div>
+      <nav class="primary box-sidebar">
+      <ul>
       <li><a href="https://jskatas.org">jskatas.org</a></li>
       <li><a href="/">Blog</a></li>
       <li><a href="/about">About</a></li>
   </ul>
 
-    </nav>
-
-    <div class="sitename">
-      <a href="/">JS Katas Blog</a>
-      <div class="subtitle">
-        Learn and re-learn JavaScript. At your speed and level.
-      </div>
-    </div>
-  </header>
-
-
-
-  <nav class="breadcrumb">
   </nav>
 
-  <main>
-    <div class="content">
+    <main class="box-main-content">
   <article class="">
 
-      <img src="preview.jpg" style="width: 100%; height: 10rem; object-fit: cover;"/>
+      <img src="preview.jpg" class="preview-image"/>
 
     <header>
       <h1 id="building-the-parseint-kata" is="more-h1">
@@ -215,8 +213,31 @@ where I had first collected some info for this blog post.</p>
 
 
   </article>
+    </main>
+    <div class="box-sidebar">
+      <h3>Latest Katas</h3>
+      <p>
+        The <b>String API</b>
+        has received a new kata
+        <code>string.trimStart()</code>
+        released November 28th, 2020.
+      </p>
+      <p style="text-align: center">
+        <a href="https://jskatas.org/#bundle-es10-katas" target="_blank" class="link-as-button">Open Kata</a>
+      </p>
+
+      <h3>Did You Know?</h3>
+      <p>
+        <code>Number.isInteger()</code>
+        was introduced with ES6 in 2015,
+        it can be used to determine if a value is an integer.
+        <code>Number.isInteger(0) === true</code>
+      </p>
+      <p style="text-align: center">
+        <a href="https://jskatas.org/#bundle-es1-katas" target="_blank" class="link-as-button">Open Kata</a>
+      </p>
     </div>
-  </main>
+  </div>
 
     <footer>
     <div>

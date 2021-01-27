@@ -1,0 +1,40 @@
+:root {
+  --distance-smaller: 0.1rem;
+  --distance-small: 0.3rem;
+
+  --layout-box-distance: 4rem;
+
+  --font-family-main: monospace;
+
+  --border-radius-small: var(--distance-small); /* Does this kinda think work? */
+
+  /* use smaller, small, medium, large, larger - thats it. If it's not enough maybe all of them need adjustment, KISS */
+  --spacing-smaller: var(--distance-smaller);
+  --spacing-small: 0.3rem;
+  --spacing-medium: 0.75rem;
+  --spacing-large: 1.5rem;
+  --spacing-larger: 3rem;
+  --spacing-big: var(--spacing-large); /* DEPRECATED name, use --spacing-large instead */
+  --spacing-bigger: var(--spacing-larger); /* DEPRECATED name, use --spacing-larger instead */
+
+  --readable-max-width: 50rem;
+
+  /* color-foreground-main, is what is says, the main text color, if the H1s should have a different color use e.g. highlight */
+  --color-foreground-main: white;
+  --color-background-main: black;
+  /* 2nd, 3rd suffix means it's a derivation of the original color, might be lighter or darker, depends on the color (theme) */
+  --color-foreground-highlight: #fca53c;
+  --color-foreground-highlight-2nd: #ae722a;
+  --color-foreground-highlight-3rd: #604218;
+
+  --color-background-inverse: white;
+  --color-foreground-inverse: black;
+
+  /* ... legacy */
+  --color-highlight: #373738;
+  --color-highlight-rgb: 164, 19, 29;
+  --color-highlight-lighter: rgba(var(--color-highlight-rgb), 0.1);
+  --color-secondary: #666;
+  --color-overlay: rgb(252, 232, 191);
+
+}

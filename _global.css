@@ -1,79 +1,36 @@
-:root {
-  --distance-smaller: 0.1rem;
-  --distance-small: 0.3rem;
-
-  --border-radius-small: var(--distance-small); /* Does this kinda think work? */
-
-  --spacing-smaller: var(--distance-smaller);
-  --spacing-small: 0.3rem;
-  --spacing-medium: 0.5rem;
-  --spacing-large: 1rem;
-  --spacing-larger: 2rem;
-  --spacing-big: 1rem; /* DEPRECATED name, use --spacing-large instead */
-  --spacing-bigger: 2rem; /* DEPRECATED name, use --spacing-larger instead */
-
-  --color-highlight: #373738;
-  --color-highlight-rgb: 164, 19, 29;
-  --color-highlight-lighter: rgba(var(--color-highlight-rgb), 0.1);
-  --color-secondary: #666;
-  --color-overlay: rgb(252, 232, 191);
-
-  --readable-max-width: 50rem;
-}
-
-/**
- *
- *  Overriding standard HTML elements, such as <body>, <a>, <ul>, etc.
- *
- */
-
-/* The reset */
-a, article, aside,
-body, blockquote,
-code,
-div,
-figure, figcaption, footer,
-header, html, h1, h2, h3, h4, h5, h6,
-img,
-kbd,
-li,
-main,
-nav,
-ol,
-pre, p,
-span,
-td,
-ul
-{
-  margin: 0;
-  padding: 0;
-}
+@import "./_vars.css";
+@import "./_reset.css";
 
 body {
-  font-family: sans-serif;
+  font-family: monospace;
   -webkit-font-smoothing: antialiased;
   line-height: 1.4;
-  margin: 4rem;
+  margin: var(--spacing-small);
+  color: var(--color-foreground-main);
+  background: var(--color-background-main);
 }
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 60rem) {
   body {
-    margin: 1rem;
+    margin: var(--spacing-medium);
   }
+}
+@media screen and (min-width: 90rem) {
+  body {
+    margin: var(--spacing-larger);
+  }
+}
+@media screen and (max-width: 60rem) {
   * {
     line-break: loose;
   }
   h1, h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
     line-break: strict;
   }
-  aside {
-    border-top: 1px solid lightgrey;
-  }
 }
-
-main {
-  max-width: 80rem; /* a readable width */
-  margin-right: auto;
-  margin-left: auto;
+body > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 blockquote {
@@ -86,10 +43,13 @@ blockquote {
   }
 
 a {
-  color: var(--color-highlight);
+  color: var(--color-foreground-main);
+  text-decoration-color: var(--color-foreground-highlight);
+  text-decoration-thickness: 2px;
 }
   a:hover {
     color: inherit;
+    text-decoration-style: dashed;
   }
 
 /*   formatting code blocks   */
@@ -100,12 +60,11 @@ pre {
   background-color: var(--color-highlight-lighter);
 }
 p code, li code {
-  background-color: var(--color-highlight-lighter);
-  padding: 0.1rem 0.3rem;
+  background-color: var(--color-foreground-highlight-3rd)
 }
-code, pre {
-  font-size: 1.1em; /* Use `em` to make all <code> relative to the element that it contains, e.g. an H1. */
-}
+/*code, pre {*/
+/*  font-size: 1.1em; !* Use `em` to make all <code> relative to the element that it contains, e.g. an H1. *!*/
+/*}*/
 
 p,
 :not(li) > ul,
@@ -114,28 +73,36 @@ p,
   text-align: justify;
 }
 ul, ol {
-  margin-left: var(--spacing-bigger);
+  margin-left: var(--spacing-larger);
 }
 
 
 
-h1 {
-  font-size: 2rem;
-}
-.page-home h1 {
-  text-align: center;
-}
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
+{
+  color: var(--color-foreground-highlight);
   margin-bottom: var(--spacing-small);
 }
   h1 code, h2 code, h3 code, h4 code, h5 code {
-    background-color: var(--color-highlight-lighter);
+    background-color: var(--color-foreground-highlight-3rd);
   }
+h1 {
+  font-size: 2rem;
+  margin: var(--spacing-larger) 0;
+}
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 60rem) {
   h1, h2, h3, h4, h5, h6 {
     text-align: center;
   }
+}
+
+body > header a {
+  text-decoration: none;
+}
+body > header a:hover {
+  color: var(--color-foreground-highlight)
 }
 
 /*   styling images    */
@@ -161,7 +128,7 @@ img.sizeup-onhover-image {
   img.sizeup-onhover-image.origin-right-top:hover {
     transform-origin: right top;
   }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 60rem) {
   img {
     max-width: 90%;
   }
@@ -171,13 +138,13 @@ figure {
   margin-bottom: var(--spacing-big);
   margin-right: var(--spacing-big);
   padding: var(--spacing-big);
-  box-shadow: 0 0 10px lightgrey;
+  border: 1px solid var(--color-foreground-highlight-3rd);
   display: inline-block;
 }
   figure.float-right {
     float: right;
   }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 60rem) {
   figure.float-right {
     float: none;
   }
@@ -197,16 +164,16 @@ td {
 }
 
 footer {
-  padding: var(--spacing-bigger);
-  margin-top: var(--spacing-bigger);
-  border-top: 1px solid lightgrey;
+  padding: var(--spacing-larger);
+  margin-top: var(--spacing-larger);
+  border-top: 1px solid var(--color-foreground-highlight-3rd);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
   footer div {
     text-align: center;
-    margin-top: var(--spacing-bigger);
+    margin-top: var(--spacing-larger);
   }
   footer ul {
     margin: 0;
@@ -244,11 +211,70 @@ blockquote.twitter-tweet {
     text-decoration: underline;
   }
 
-.content {
-  flex: 3;
+.box-main-content,
+.box-sidebar {
+  box-shadow: 0px 0px 20px 5px var(--color-foreground-highlight-3rd);
+  padding: var(--spacing-larger);
+  margin: var(--spacing-larger);
+  overflow: hidden;
+}
+.box-sidebar {
+  background-image: linear-gradient(121deg, var(--color-background-main) 50%, var(--color-foreground-highlight-3rd));
+  flex: 0 0 10rem;
+  display: none;
+}
+  @media screen and (min-width: 60rem) {
+    .box-main-content,
+    .box-sidebar {
+      box-shadow: 0px 0px 30px 8px var(--color-foreground-highlight-3rd);
+      margin: var(--spacing-larger) var(--spacing-medium);
+    }
+  }
+  @media screen and (min-width: 90rem) {
+    .box-main-content,
+    .box-sidebar {
+      box-shadow: 0px 0px 40px 10px var(--color-foreground-highlight-3rd);
+      margin: var(--spacing-larger);
+    }
+    .box-sidebar:last-child {
+      display: flex; /* Replace display:none */
+    }
+  }
+
+.box-sidebar:last-child { /* The sidebar right of main. */
+  flex-direction: column;
+}
+
+main {
+  flex: 0 1 var(--readable-max-width);
+  /*min-width: 60%; !* Make sure this column gets at least a major amount of the available width! *!*/
 
   /* Needed for the pre's overflow:auto to work and make the code boxes scrollable when they are too wide.
     learned it at https://stackoverflow.com/questions/36247140/why-dont-flex-items-shrink-past-content-size */
   min-width: 0;
 }
+  main > h1 {
+    text-align: center;
+    margin-top: 0;
+  }
 
+  @media screen and (max-width: 60rem) {
+    main {
+      box-shadow: none;
+      padding: var(--spacing-medium);
+    }
+  }
+
+.box-sidebar a.link-as-button {
+  display: inline-block;
+  background: var(--color-foreground-highlight);
+  color: var(--color-foreground-inverse);
+  text-decoration: none;
+  padding: var(--spacing-medium);
+  border-radius: var(--distance-small);
+}
+.box-sidebar a.link-as-button:hover {
+  background-color: var(--color-foreground-highlight-2nd);
+  transition: background-color 0.5s;
+  text-decoration: underline;
+}

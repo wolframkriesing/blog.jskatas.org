@@ -1,74 +1,56 @@
-body > header {
-  display: flex;
+header.sitename {
+  margin-bottom: var(--layout-box-distance);
 }
-  body > header .sitename {
-    flex: 0;
-    text-align: center;
-  }
-  body > header .sitename a {
+header.sitename, header.sitename * {
+  text-align: center;
+}
+  header.sitename a {
     font-size: 2rem;
   }
-  body > header .sitename .subtitle {
+  header.sitename .subtitle {
     white-space: nowrap;
   }
-  body > header nav.primary {
-    flex: 2;
-  }
-  @media screen and (max-width: 600px) {
-    body > header {
-      padding-bottom: var(--spacing-bigger);
-    }
-    body > header .sitename {
+  @media screen and (max-width: 60rem) {
+    header.sitename {
       flex: 1;
     }
   }
 
-nav.primary {
-  display: inline;
+
+nav.primary a,
+nav.secondary a {
+  text-decoration: underline;
 }
-  nav ol {
+nav.primary a:hover,
+nav.secondary a:hover {
+  text-decoration: none;
+}
+
+
+nav.primary {
+  max-height: 30rem;
+  display: none;
+}
+  nav.primary li * {
+    color: var(--color-foreground-highlight);
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  nav.primary ul {
     list-style-type: none;
   }
   nav.primary ul {
-    display: inline;
     margin: 0;
   }
   nav.primary li {
-    display: inline;
-    margin-right: var(--spacing-bigger);
+    margin-bottom: var(--spacing-medium);
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (min-width: 60rem) {
     nav.primary {
-      display: none;
+      display: flex;
     }
   }
 
-nav.breadcrumb {
-  margin-bottom: var(--spacing-bigger);
-}
-@media screen and (max-width: 600px) {
-  nav.breadcrumb {
-    text-align: center;
-  }
-}
-
-nav.tags ol, nav.months ol {
-  margin-left: 0;
-}
-nav.tags ol {
-  max-height: 31rem;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-nav.tags li {
-  white-space: nowrap;
-}
-nav.tags header, nav.months header {
-  margin-bottom: var(--spacing-small);
-}
-
-
-/*    styling the secondary nav    */
 
 nav.secondary {
   position: fixed;
@@ -76,9 +58,13 @@ nav.secondary {
   bottom: 0;
   margin: 0;
   padding: var(--spacing-big);
-  background-color: var(--color-overlay);
+  background-color: var(--color-foreground-highlight-2nd);
 }
+  nav.secondary .menu-button {
+    text-align: center;
+  }
   nav.secondary ul {
+    list-style-type: none;
     height: 0;
     width: var(--spacing-big);
     margin: 0;
@@ -101,16 +87,13 @@ nav.secondary {
   }
   nav.secondary ul li {
     list-style: none;
-    padding: 0.2rem;
+    padding: var(--spacing-small);
     text-align: center;
     flex: 1;
     font-size: 1.5rem;
   }
-  nav.secondary ul li a.highlight {
-    color: #E8944B;
-  }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 60rem) {
     nav.secondary {
       left: 0;
       top: 0;
@@ -119,51 +102,3 @@ nav.secondary {
       right: auto;
     }
   }
-
-/**
- *  The tags filter/toggle "functionality".
- *  It is an invisible checkbox, that shows/hides the according <ol> tag with either top20 or a-z tags.
- */
-nav.tags ol.tags-alphabetically-sorted { /* initially dont show these tags */
-  display: none;
-}
-
-/* the sibling selector `~` is used to show/hide the <ol> according to the checkbox being checked or not */
-nav.tags input[type=checkbox]:checked ~ ol.tags-alphabetically-sorted {
-  display: block;
-}
-nav.tags input[type=checkbox]:checked ~ ol.top-tags {
-  display: none;
-}
-
-/* Hide the checkbox completely, we only use it for setting and remember the value. */
-nav.tags input[type=checkbox] {
-  display: none;
-}
-
-nav.tags label {
-  display: flex;
-  width: 8rem; /* enough for both elements to nicely have 50% each and be fully readable, dont know how to automtically size this :( */
-}
-  nav.tags label span {
-    flex: 1;
-    white-space: nowrap;
-    text-align: center;
-    padding: var(--spacing-smaller);
-    margin-bottom: var(--spacing-medium);
-  }
-
-/* The un-checked option. */
-nav.tags input[type=checkbox]:not(checked) ~ label .all,
-nav.tags input[type=checkbox]:checked ~ label .top10 {
-  background: transparent;
-  color: var(--color-secondary);
-  border-bottom: 1px solid var(--color-highlight-lighter);
-}
-/* The checked option. */
-nav.tags input[type=checkbox]:checked ~ label .all,
-nav.tags input[type=checkbox]:not(checked) ~ label .top10 {
-  background: var(--color-highlight-lighter);
-  color: initial;
-  border-bottom: 1px solid transparent;
-}

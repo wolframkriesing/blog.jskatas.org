@@ -1,54 +1,18 @@
 @import "../_global.css";
 @import "../_nav.css";
 
-main {
-  display: flex;
+.box-sidebar {
+  opacity: 0.2;
 }
-main .content {
-  flex: 3;
-  max-width: var(--readable-max-width);
-  min-width: 60%; /* Make sure this column gets at least a major amount of the available width! */
-}
-  main aside {
-    flex: 1;
-    overflow: auto;
-  }
-    main aside.left {
-      max-width: 15rem;
-    }
-    main aside.right {
-      flex: 0 auto;
-      padding-left: var(--spacing-big);
-    }
-    main aside > * {
-      margin-bottom: var(--spacing-bigger);
-      margin-right: 4rem;
-    }
-    main aside .tags:hover {
-      height: auto;
-    }
-
-@media screen and (max-width: 600px) {
-  main aside {
-    padding: var(--spacing-bigger);
-    text-align: center;
-  }
-    main aside > * {
-      margin-right: 0;
-    }
-  main {
-    flex-direction: column-reverse;
-  }
-}
-@media screen and (max-width: 900px) {
-  /* Make the right sidebar disappear earlier, the space just gets tighter the narrower ... */
-  aside.right {
-    display: none;
-  }
+.box-sidebar:hover {
+  opacity: 1;
+  transition: opacity 1s;
 }
 
-article.latest {
-  margin-bottom: 5rem;
+@media screen and (max-width: 60rem) {
+  nav {
+    opacity: 1;
+  }
 }
 
 .isDraft h1,
@@ -56,4 +20,10 @@ article.latest {
 .isDraft h2 a
 {
   color: #666;
+}
+
+article img.preview-image {
+  width: 100%;
+  max-height: 10rem;
+  object-fit: cover;
 }
