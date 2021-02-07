@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="Wolfram Kriesing">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JSKatas Blog - Continuously Learn JavaScript. Your Way.">
+
+  <link rel="preload" href="/_vars.css" as="style">
+  <link rel="preload" href="/_reset.css" as="style">
+  <link rel="preload" href="/_global.css" as="style">
+  <link rel="preload" href="/_nav.css" as="style">
+
+    <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@jskatas" />
+  <meta name="twitter:title" content="What&amp;#39;s an &amp;quot;Unary&amp;quot; Operator?" />
+
+  <meta property="og:title" content="What&amp;#39;s an &amp;quot;Unary&amp;quot; Operator?">
+  <meta property="og:type" content="website">
+<meta property="og:url" content="https://picostitch.com/tidbits/2021/02/what-is-a-unary-operator/">  <meta property="og:site_name" content="JSKatas Blog - Continuously Learn JavaScript. Your Way.">
+
+  <script async defer data-domain="blog.jskatas.org" src="https://plausible.io/js/plausible.js"></script>
+<link rel="canonical" href="https://picostitch.com/tidbits/2021/02/what-is-a-unary-operator/">  <title>What&amp;#39;s an &amp;quot;Unary&amp;quot; Operator? | JSKatas Blog - Continuously Learn JavaScript. Your Way.</title>
+
+  <script async defer type="module" src="https://more-html.github.io/components/src/Heading-loader.js"></script>
+  <link rel="stylesheet" href="/blog/blog.css" type="text/css">
+  <meta property="article:type" content="article" />
+    <meta property="article:tag" content="learning" />
+    <meta property="article:tag" content="words" />
+    <meta property="article:tag" content="knowledge" />
+    <meta property="article:tag" content="JavaScript" />
+
+  <meta property="og:description" content="Coming across &quot;unary operators&quot; might happen in JavaScript, or (m)any other programming language(s).
+A couple examples for what is a &quot;unary operator&quot;.  
+In JavaScript you may find: `+1`, `-42`, `+ &quot;1&quot;`, `!true`, `delete x`.
+All those are unary operators as you can also read on
+[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#unary_operators)
+and in the 
+[spec](https://tc39.es/ecma262/#sec-unary-operators). **But what does the &quot;unary&quot; really mean?**
+And why is `1 + 1` not using a unary operator?" />
+  <meta property="article:description" content="Coming across &quot;unary operators&quot; might happen in JavaScript, or (m)any other programming language(s).
+A couple examples for what is a &quot;unary operator&quot;.  
+In JavaScript you may find: `+1`, `-42`, `+ &quot;1&quot;`, `!true`, `delete x`.
+All those are unary operators as you can also read on
+[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#unary_operators)
+and in the 
+[spec](https://tc39.es/ecma262/#sec-unary-operators). **But what does the &quot;unary&quot; really mean?**
+And why is `1 + 1` not using a unary operator?" />
+  <meta name="twitter:description" content="Coming across &quot;unary operators&quot; might happen in JavaScript, or (m)any other programming language(s).
+A couple examples for what is a &quot;unary operator&quot;.  
+In JavaScript you may find: `+1`, `-42`, `+ &quot;1&quot;`, `!true`, `delete x`.
+All those are unary operators as you can also read on
+[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#unary_operators)
+and in the 
+[spec](https://tc39.es/ecma262/#sec-unary-operators). **But what does the &quot;unary&quot; really mean?**
+And why is `1 + 1` not using a unary operator?" />
+
+    <meta property="og:image" content="https://blog.jskatas.org/blog/2021/02/06-what-is-a-unary-operator/unary-preview.png" />
+    <meta property="og:image:url"  content="https://blog.jskatas.org/blog/2021/02/06-what-is-a-unary-operator/unary-preview.png" />
+    <meta name="twitter:image" content="https://blog.jskatas.org/blog/2021/02/06-what-is-a-unary-operator/unary-preview.png" />
+</head>
+
+<body class="page-post">
+    <header class="sitename">
+    <a href="/">JSKatas Blog</a>
+    <p class="subtitle">
+      Continuously Learn JavaScript. Your Way.
+    </p>
+  </header>
+
+  <div>
+      <nav class="primary box-sidebar">
+      <ul>
+      <li><a href="https://jskatas.org">jskatas.org</a></li>
+      <li><a href="/">Blog</a></li>
+      <li><a href="/about">About</a></li>
+  </ul>
+
+  </nav>
+
+    <main class="box-main-content">
+  <article class="">
+
+      <img src="unary-preview.png" class="preview-image"/>
+
+    <header>
+      <h1 id="what-is-a-unary-operator" is="more-h1">
+        What&#39;s an &quot;Unary&quot; Operator?
+        
+      </h1>
+      <div class="metadata">
+        Wolfram Kriesing
+        - February 6, 2021
+          - tagged with: #learning #words #knowledge #JavaScript       </div>
+    </header>
+
+      <p>
+        <a href="https://picostitch.com/tidbits/2021/02/what-is-a-unary-operator/">Originally posted on picostitch.com</a>
+      </p>
+
+    <p>Coming across &quot;unary operators&quot; might happen in JavaScript, or (m)any other programming language(s).
+A couple examples for what is a &quot;unary operator&quot;.<br>In JavaScript you may find: <code>+1</code>, <code>-42</code>, <code>+ &quot;1&quot;</code>, <code>!true</code>, <code>delete x</code>.
+All those are unary operators as you can also read on
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#unary_operators">MDN</a>
+and in the 
+<a href="https://tc39.es/ecma262/#sec-unary-operators">spec</a>. <strong>But what does the &quot;unary&quot; really mean?</strong>
+And why is <code>1 + 1</code> not using a unary operator?</p>
+<h2 is="more-h2" id="definition">Definition</h2>
+<p>In <a href="https://www.merriam-webster.com/dictionary/unary">Merriam-Webster &quot;unary&quot; is defined like so</a></p>
+<blockquote>
+<p>having, consisting of, or acting on a single element, item, or component</p>
+</blockquote>
+<p>The <code>+</code>, the <code>-</code>, the <code>!</code> or the <code>delete</code> are applied to one &quot;element&quot;.
+In spec terms, a unary &quot;operator&quot; is applied to one and only one variable, identifier or alike.
+In <code>+1</code> the operator is the <code>+</code> and it is applied on the <code>1</code>. Because it is applied only to
+one operand, in this case the <code>1</code>, it is a unary (not binary, not ternary, not quaternary) operator.</p>
+<h2 is="more-h2" id="what-is-the-opposite-of-unary">What is the Opposite of &quot;Unary&quot;?</h2>
+<p>Just before I used &quot;binary&quot;, &quot;ternary&quot; and &quot;quaternary&quot;, because I jumped a little bit ahead.
+I had asked myself what else &quot;unary&quot; does belong to, if there was something like &quot;multi-nary&quot; or alike.
+So I hunted the web and found 
+<a href="https://english.stackexchange.com/questions/342557/is-there-a-word-like-unary-meaning-consisting-of-more-than-one-element">the answer on english.stackexchange.com</a>.
+This seems to be the place where people who know language(s) seem to hang out.</p>
+<p>On that site exactly my question was asked and discussed
+&quot;Is there a word like “unary” meaning “consisting of <em>more than one</em> element”?&quot;.
+The discussion of the term is short and insightful (not so full of trolling as the web sometimes offers).
+And we end up in computer science space again, the final answer that leads me to 
+the definition of &quot;Arity&quot; resolves all the mystery and clears up the space around the &quot;??-ary&quot;
+word.</p>
+<blockquote>
+<p>You can use multiple-arity if different numbers of arguments are accepted (e.g. a polymorphic function/method), or n-ary if you want to be indefinite about the arity.</p>
+</blockquote>
+<h2 is="more-h2" id="arity">Arity</h2>
+<p>The above is <a href="https://english.stackexchange.com/a/342560">the best answer</a> on what the opposite or &quot;unary&quot; is,
+it also links on to the 
+<a href="https://en.wikipedia.org/wiki/Arity">wikipedia article on &quot;Arity&quot;</a>
+where one can go into depth and sees all the other arities, as touched on above.
+The variable number of &quot;elements&quot;, or arguments is called &quot;n-ary&quot; 
+as <a href="https://en.wikipedia.org/wiki/Arity#n-ary">the according paragraph explains</a>.</p>
+<h2 is="more-h2" id="back-to-javascript">Back to JavaScript</h2>
+<p>Coming back to JavaScript. When reading about the 
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unary_plus">&quot;unary plus&quot; on MDN</a>
+it is easier to understand now. 
+The difference to
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Addition">the other &quot;+&quot;</a>,
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#arithmetic_operators">the arithmetic operator</a>
+is not just the name but also the functionality.
+The one adds two &quot;things&quot; (the arithmetic operator) and the other only converts one &quot;thing&quot; (the unary operator)
+to a Number type.
+This answers the second question I started with, about the difference to <code>1 + 1</code>.</p>
+<p>Let&#39;s see three unary and one arithmetic operator in action:</p>
+<pre><code>&gt; + &#39;1&#39;
+1
+
+&gt; 1 + 1
+2
+
+&gt; typeof + &#39;1&#39;
+&quot;number&quot;</code></pre>
+<p>Are you seeing the three unary operators? Hint: <code>typeof</code> is also a unary operator.</p>
+<h2 is="more-h2" id="the-ecmascript-spec">The ECMAScript Spec</h2>
+<figure>
+    <picture>
+        <source srcset="unary-spec.webp">
+        <img src="unary-spec.png" alt="ECMAScript Spec chapter on unary + operator" style="width:30rem" />
+    </picture>
+    <figcaption>ECMAScript Spec chapter on unary + operator</figcaption>
+</figure>
+
+<p>Not very surprisingly the 
+<a href="https://tc39.es/ecma262/#sec-unary-plus-operator">spec also has the chapter &quot;Unary + Operator&quot;</a>.
+Understanding that this is not a JavaScript specific term, but seemingly even more computer science, 
+even rooted in math takes away more of the fear of touching it, because the usefulness and possible application
+of the term has just increased.</p>
+<p>So far my learnings on &quot;unary&quot;. If you find any errors or possible improvements let me know. I am always curious.</p>
+
+
+  </article>
+    </main>
+    <div class="box-sidebar">
+      <h3>Latest Katas</h3>
+      <p>
+        The <b>String API</b>
+        has received a new kata
+        <code>string.trimStart()</code>
+        released November 28th, 2020.
+      </p>
+      <p style="text-align: center">
+        <a href="https://jskatas.org/#bundle-es10-katas" target="_blank" class="link-as-button">Open Kata</a>
+      </p>
+
+      <h3>Did You Know?</h3>
+      <p>
+        <code>Number.isInteger()</code>
+        was introduced with ES6 in 2015,
+        it can be used to determine if a value is an integer.
+        <code>Number.isInteger(0) === true</code>
+      </p>
+      <p style="text-align: center">
+        <a href="https://jskatas.org/#bundle-es1-katas" target="_blank" class="link-as-button">Open Kata</a>
+      </p>
+    </div>
+  </div>
+
+    <footer>
+    <div>
+      <b>Pages</b>
+        <ul>
+      <li><a href="https://jskatas.org">jskatas.org</a></li>
+      <li><a href="/">Blog</a></li>
+      <li><a href="/about">About</a></li>
+  </ul>
+
+    </div>
+
+    <div>
+      <b>Contact</b>
+      <ul>
+        <li><a href="https://twitter.com/wolframkriesing" rel="me">Twitter</a></li>
+        <li><a href="https://codeberg.com/wolframkriesing" rel="me">Codeberg</a></li>
+        <li><a href="https://github.com/wolframkriesing" rel="me">Github</a></li>
+        <li><a href="mailto:w+through-jskatas-blog-footer-contact@kriesing.de">Email</a></li>
+      </ul>
+    </div>
+  </footer>
+
+    <nav class="secondary">
+    <div class="menu-button">&#9776;</div>
+      <ul>
+      <li><a href="https://jskatas.org">jskatas.org</a></li>
+      <li><a href="/">Blog</a></li>
+      <li><a href="/about">About</a></li>
+  </ul>
+
+  </nav>
+
+</body>
+</html>
